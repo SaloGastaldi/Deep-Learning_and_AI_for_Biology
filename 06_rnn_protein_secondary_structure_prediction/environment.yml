@@ -1,0 +1,24 @@
+name: rnn-protein-secondary-structure
+
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cpuonly
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - tqdm
+  - biopython
+  - pip
