@@ -1,0 +1,37 @@
+name: protein-transformers
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - pip
+  - jupyterlab
+  - notebook
+  - ipykernel
+
+  # Core scientific stack
+  - numpy
+  - pandas
+  - scipy
+
+  # Visualization
+  - matplotlib
+  - seaborn
+
+  # Bioinformatics
+  - biopython
+
+  # ML / Deep Learning
+  - pytorch
+  - torchvision
+  - torchaudio
+
+  # Utilities
+  - scikit-learn
+  - tqdm
+
+  - pip:
+      - transformers
+      - datasets
+      - einops
