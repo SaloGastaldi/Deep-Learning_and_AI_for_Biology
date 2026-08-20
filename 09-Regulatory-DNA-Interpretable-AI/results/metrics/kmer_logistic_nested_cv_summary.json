@@ -1,0 +1,249 @@
+{
+  "experiment_name": "kmer_logistic_regression_nested_grouped_cross_validation",
+  "test_set_used": false,
+  "development_data": {
+    "sources": [
+      "data/splits/train.csv",
+      "data/splits/validation.csv"
+    ],
+    "samples": 1131,
+    "positive": 103,
+    "negative": 1028,
+    "positive_prevalence": 0.09106984969053934,
+    "similarity_groups": 1126
+  },
+  "grouping": {
+    "method": "CD-HIT-EST",
+    "identity_threshold": 0.8,
+    "minimum_sequence_coverage": 0.8,
+    "global_identity": true
+  },
+  "cross_validation": {
+    "outer_folds": 5,
+    "inner_folds": 4,
+    "splitter": "StratifiedGroupKFold",
+    "seed": 123,
+    "selection_metric": "inner_mean_auprc"
+  },
+  "features": {
+    "type": "normalized_kmer_frequencies",
+    "normalization": "L2",
+    "sequence_only": true,
+    "excluded_features": [
+      "motifs",
+      "PWM_scores",
+      "transcription_factor_annotations",
+      "expression_values",
+      "response_classes",
+      "cis_regulatory_architecture"
+    ]
+  },
+  "parameter_grid": {
+    "ngram_ranges": [
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "C_values": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "class_weight_values": [
+      "none",
+      "balanced"
+    ]
+  },
+  "outer_fold_metric_distribution": {
+    "auprc": {
+      "mean": 0.1941546052953982,
+      "std": 0.04312097628566495,
+      "min": 0.15510334817014731,
+      "max": 0.2716954058513808,
+      "values": [
+        0.15510334817014731,
+        0.2716954058513808,
+        0.15787494361163368,
+        0.1782027639934908,
+        0.20789656485033847
+      ]
+    },
+    "auroc": {
+      "mean": 0.6514169006461217,
+      "std": 0.04102125587132835,
+      "min": 0.5721254355400697,
+      "max": 0.6851595006934812,
+      "values": [
+        0.5721254355400697,
+        0.6851595006934812,
+        0.6565533980582524,
+        0.6631067961165049,
+        0.6801393728222995
+      ]
+    },
+    "mcc": {
+      "mean": 0.07214748490166788,
+      "std": 0.08959174349414058,
+      "min": 0.0,
+      "max": 0.20375626962263438,
+      "values": [
+        0.0,
+        0.20375626962263438,
+        0.15698115488570502,
+        0.0,
+        0.0
+      ]
+    },
+    "f1": {
+      "mean": 0.10333870596361963,
+      "std": 0.12724036057377042,
+      "min": 0.0,
+      "max": 0.27906976744186046,
+      "values": [
+        0.0,
+        0.27906976744186046,
+        0.2376237623762376,
+        0.0,
+        0.0
+      ]
+    },
+    "precision": {
+      "mean": 0.08417508417508417,
+      "std": 0.11036377585926398,
+      "min": 0.0,
+      "max": 0.2727272727272727,
+      "values": [
+        0.0,
+        0.2727272727272727,
+        0.14814814814814814,
+        0.0,
+        0.0
+      ]
+    },
+    "recall": {
+      "mean": 0.17714285714285713,
+      "std": 0.23863557734652685,
+      "min": 0.0,
+      "max": 0.6,
+      "values": [
+        0.0,
+        0.2857142857142857,
+        0.6,
+        0.0,
+        0.0
+      ]
+    },
+    "balanced_accuracy": {
+      "mean": 0.5473092926490984,
+      "std": 0.05863864438576073,
+      "min": 0.5,
+      "max": 0.6325242718446602,
+      "values": [
+        0.5,
+        0.6040221914008321,
+        0.6325242718446602,
+        0.5,
+        0.5
+      ]
+    },
+    "accuracy": {
+      "mean": 0.8496783751120814,
+      "std": 0.09679721711568814,
+      "min": 0.6592920353982301,
+      "max": 0.911504424778761,
+      "values": [
+        0.9070796460176991,
+        0.8634361233480177,
+        0.6592920353982301,
+        0.911504424778761,
+        0.9070796460176991
+      ]
+    }
+  },
+  "pooled_out_of_fold_metrics_at_0_5": {
+    "auprc": 0.14365700702013162,
+    "auroc": 0.5982018057496883,
+    "mcc": 0.09207245665067432,
+    "f1": 0.17475728155339806,
+    "precision": 0.17475728155339806,
+    "recall": 0.17475728155339806,
+    "balanced_accuracy": 0.5460362283253372,
+    "accuracy": 0.8496905393457118,
+    "true_negative": 943,
+    "false_positive": 85,
+    "false_negative": 85,
+    "true_positive": 18
+  },
+  "selected_configurations": [
+    {
+      "outer_fold": 1,
+      "ngram_range": [
+        5,
+        5
+      ],
+      "C": 10.0,
+      "class_weight": null,
+      "inner_best_mean_auprc": 0.21987061183958465
+    },
+    {
+      "outer_fold": 2,
+      "ngram_range": [
+        5,
+        5
+      ],
+      "C": 10.0,
+      "class_weight": "balanced",
+      "inner_best_mean_auprc": 0.18248739832498706
+    },
+    {
+      "outer_fold": 3,
+      "ngram_range": [
+        3,
+        3
+      ],
+      "C": 10.0,
+      "class_weight": "balanced",
+      "inner_best_mean_auprc": 0.19934949651351916
+    },
+    {
+      "outer_fold": 4,
+      "ngram_range": [
+        5,
+        5
+      ],
+      "C": 10.0,
+      "class_weight": null,
+      "inner_best_mean_auprc": 0.2217876889506795
+    },
+    {
+      "outer_fold": 5,
+      "ngram_range": [
+        5,
+        5
+      ],
+      "C": 10.0,
+      "class_weight": null,
+      "inner_best_mean_auprc": 0.21961886816306844
+    }
+  ],
+  "training_seconds": 230.94165301322937,
+  "outputs": {
+    "predictions": "results/tables/kmer_logistic_nested_cv_predictions.csv",
+    "fold_results": "results/tables/kmer_logistic_nested_cv_fold_results.csv",
+    "inner_search_results": "results/tables/kmer_logistic_inner_search_results.csv"
+  }
+}

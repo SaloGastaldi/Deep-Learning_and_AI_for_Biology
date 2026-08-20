@@ -1,0 +1,20 @@
+name: regulatory-dna-interpretable-ai
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - biopython
+  - jupyterlab
+  - ipykernel
+  - cd-hit
+  - pip:
+      - torch

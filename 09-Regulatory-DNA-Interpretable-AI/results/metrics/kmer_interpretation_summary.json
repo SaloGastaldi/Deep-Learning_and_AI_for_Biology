@@ -1,0 +1,122 @@
+{
+  "experiment_name": "sequence_only_kmer_logistic_interpretation",
+  "summary_scope": "public_sanitized",
+  "test_set_used": false,
+  "prior_regulatory_knowledge_loaded": false,
+  "public_output_policy": {
+    "real_kmer_identities_distributed": false,
+    "sequence_level_predictions_distributed": false,
+    "figures_use_anonymous_pattern_labels": true
+  },
+  "development_data": {
+    "sources": [
+      "data/splits/train.csv",
+      "data/splits/validation.csv"
+    ],
+    "samples": 1131,
+    "positive": 103,
+    "negative": 1028,
+    "positive_prevalence": 0.09106984969053934,
+    "similarity_groups": 1126
+  },
+  "evaluation_design": {
+    "splitter": "StratifiedGroupKFold",
+    "outer_folds": 5,
+    "seed": 123,
+    "folds_frozen": true,
+    "coefficient_ranking_statistic": "mean coefficient across outer-fold models",
+    "full_development_coefficient_role": "secondary reference only"
+  },
+  "predefined_analyses": {
+    "primary": {
+      "k": 5,
+      "reason": "Previously validated above permutation null."
+    },
+    "complementary": {
+      "k": 6,
+      "reason": "Later direct comparison with six-nucleotide cores."
+    },
+    "selection_policy": "Neither representation will be selected based on agreement with prior motifs."
+  },
+  "excluded_training_features": [
+    "motifs",
+    "PWM_scores",
+    "transcription_factor_annotations",
+    "expression_values",
+    "response_classes",
+    "cis_regulatory_architecture",
+    "results_from_previous_consultancy"
+  ],
+  "enrichment_analysis": {
+    "unit": "k-mer presence per promoter",
+    "test": "two-sided Fisher exact test",
+    "multiple_testing": "Benjamini-Hochberg FDR"
+  },
+  "analyses": {
+    "5": {
+      "k": 5,
+      "possible_kmers": 1024,
+      "pooled_oof_metrics_at_0_5": {
+        "auprc": 0.19548546808075834,
+        "auroc": 0.6554248045030411,
+        "mcc": 0.0,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.9089301503094607,
+        "tn": 1028,
+        "fp": 0,
+        "fn": 103,
+        "tp": 0
+      },
+      "stable_positive_kmers": 280,
+      "stable_negative_kmers": 304,
+      "fdr_significant_presence_enrichment_kmers": 0,
+      "public_output_policy": {
+        "real_kmer_identities_distributed": false,
+        "rankings_with_real_kmers_distributed": false,
+        "oof_predictions_with_identifiers_distributed": false,
+        "figures_use_anonymous_pattern_labels": true
+      },
+      "outputs": {
+        "fold_metrics": "results/tables/kmer_interpretation/k5_outer_fold_metrics.csv",
+        "positive_figure": "results/figures/kmer_interpretation/k5_top_positive_coefficients.png",
+        "negative_figure": "results/figures/kmer_interpretation/k5_top_negative_coefficients.png"
+      }
+    },
+    "6": {
+      "k": 6,
+      "possible_kmers": 4096,
+      "pooled_oof_metrics_at_0_5": {
+        "auprc": 0.19814984830985943,
+        "auroc": 0.6275357938876507,
+        "mcc": 0.0,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.9089301503094607,
+        "tn": 1028,
+        "fp": 0,
+        "fn": 103,
+        "tp": 0
+      },
+      "stable_positive_kmers": 1040,
+      "stable_negative_kmers": 1195,
+      "fdr_significant_presence_enrichment_kmers": 0,
+      "public_output_policy": {
+        "real_kmer_identities_distributed": false,
+        "rankings_with_real_kmers_distributed": false,
+        "oof_predictions_with_identifiers_distributed": false,
+        "figures_use_anonymous_pattern_labels": true
+      },
+      "outputs": {
+        "fold_metrics": "results/tables/kmer_interpretation/k6_outer_fold_metrics.csv",
+        "positive_figure": "results/figures/kmer_interpretation/k6_top_positive_coefficients.png",
+        "negative_figure": "results/figures/kmer_interpretation/k6_top_negative_coefficients.png"
+      }
+    }
+  },
+  "runtime_seconds": 27.756829500198364
+}

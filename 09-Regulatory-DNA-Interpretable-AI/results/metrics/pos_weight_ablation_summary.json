@@ -1,0 +1,238 @@
+{
+  "study_name": "pos_weight_ablation",
+  "test_set_used": false,
+  "selection_metric": "best_validation_auprc",
+  "weights_evaluated": [
+    9.952941176470588,
+    5.0,
+    3.0,
+    1.0
+  ],
+  "best_configuration": {
+    "pos_weight": 1.0,
+    "best_epoch": 15,
+    "best_validation_auprc": 0.23634145483382346,
+    "best_validation_auroc": 0.6101953601953601,
+    "best_validation_mcc_at_0_5": 0.0,
+    "best_validation_f1_at_0_5": 0.0,
+    "best_validation_precision_at_0_5": 0.0,
+    "best_validation_recall_at_0_5": 0.0,
+    "best_validation_balanced_accuracy_at_0_5": 0.5,
+    "best_validation_loss": 0.3501728141307831,
+    "train_auprc_at_best_epoch": 0.0975354050486153,
+    "epochs_completed": 23,
+    "early_stopping_triggered": true,
+    "training_seconds": 32.8803505897522,
+    "checkpoint": "experiments/pos_weight_ablation/pos_weight_1/best_checkpoint.pt",
+    "history": "experiments/pos_weight_ablation/pos_weight_1/training_history.csv",
+    "test_set_used": false,
+    "fixed_configuration": {
+      "seed": 123,
+      "architecture": {
+        "input_channels": 4,
+        "conv_channels": [
+          32,
+          64,
+          128
+        ],
+        "kernel_sizes": [
+          15,
+          11,
+          7
+        ],
+        "pool_size": 4,
+        "dense_units": 64,
+        "dropout": 0.4
+      },
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "maximum_epochs": 50,
+      "patience": 8,
+      "optimizer": "AdamW",
+      "loss": "BCEWithLogitsLoss"
+    }
+  },
+  "all_results": [
+    {
+      "pos_weight": 9.952941176470588,
+      "best_epoch": 2,
+      "best_validation_auprc": 0.12644760970815805,
+      "best_validation_auroc": 0.5546398046398047,
+      "best_validation_mcc_at_0_5": 0.10186685381080143,
+      "best_validation_f1_at_0_5": 0.18681318681318682,
+      "best_validation_precision_at_0_5": 0.10365853658536585,
+      "best_validation_recall_at_0_5": 0.9444444444444444,
+      "best_validation_balanced_accuracy_at_0_5": 0.5683760683760684,
+      "best_validation_loss": 1.2474671530723571,
+      "train_auprc_at_best_epoch": 0.09382477921528859,
+      "epochs_completed": 10,
+      "early_stopping_triggered": true,
+      "training_seconds": 13.521087646484375,
+      "checkpoint": "experiments/pos_weight_ablation/pos_weight_9p952941/best_checkpoint.pt",
+      "history": "experiments/pos_weight_ablation/pos_weight_9p952941/training_history.csv",
+      "test_set_used": false,
+      "fixed_configuration": {
+        "seed": 123,
+        "architecture": {
+          "input_channels": 4,
+          "conv_channels": [
+            32,
+            64,
+            128
+          ],
+          "kernel_sizes": [
+            15,
+            11,
+            7
+          ],
+          "pool_size": 4,
+          "dense_units": 64,
+          "dropout": 0.4
+        },
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "maximum_epochs": 50,
+        "patience": 8,
+        "optimizer": "AdamW",
+        "loss": "BCEWithLogitsLoss"
+      }
+    },
+    {
+      "pos_weight": 5.0,
+      "best_epoch": 2,
+      "best_validation_auprc": 0.16802056529011,
+      "best_validation_auroc": 0.5235042735042735,
+      "best_validation_mcc_at_0_5": 0.0,
+      "best_validation_f1_at_0_5": 0.0,
+      "best_validation_precision_at_0_5": 0.0,
+      "best_validation_recall_at_0_5": 0.0,
+      "best_validation_balanced_accuracy_at_0_5": 0.5,
+      "best_validation_loss": 0.864736829996109,
+      "train_auprc_at_best_epoch": 0.09598555311113197,
+      "epochs_completed": 10,
+      "early_stopping_triggered": true,
+      "training_seconds": 14.83655571937561,
+      "checkpoint": "experiments/pos_weight_ablation/pos_weight_5/best_checkpoint.pt",
+      "history": "experiments/pos_weight_ablation/pos_weight_5/training_history.csv",
+      "test_set_used": false,
+      "fixed_configuration": {
+        "seed": 123,
+        "architecture": {
+          "input_channels": 4,
+          "conv_channels": [
+            32,
+            64,
+            128
+          ],
+          "kernel_sizes": [
+            15,
+            11,
+            7
+          ],
+          "pool_size": 4,
+          "dense_units": 64,
+          "dropout": 0.4
+        },
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "maximum_epochs": 50,
+        "patience": 8,
+        "optimizer": "AdamW",
+        "loss": "BCEWithLogitsLoss"
+      }
+    },
+    {
+      "pos_weight": 3.0,
+      "best_epoch": 2,
+      "best_validation_auprc": 0.15709270870827827,
+      "best_validation_auroc": 0.5402930402930403,
+      "best_validation_mcc_at_0_5": 0.0,
+      "best_validation_f1_at_0_5": 0.0,
+      "best_validation_precision_at_0_5": 0.0,
+      "best_validation_recall_at_0_5": 0.0,
+      "best_validation_balanced_accuracy_at_0_5": 0.5,
+      "best_validation_loss": 0.639911699295044,
+      "train_auprc_at_best_epoch": 0.09296819556051764,
+      "epochs_completed": 10,
+      "early_stopping_triggered": true,
+      "training_seconds": 14.974287986755371,
+      "checkpoint": "experiments/pos_weight_ablation/pos_weight_3/best_checkpoint.pt",
+      "history": "experiments/pos_weight_ablation/pos_weight_3/training_history.csv",
+      "test_set_used": false,
+      "fixed_configuration": {
+        "seed": 123,
+        "architecture": {
+          "input_channels": 4,
+          "conv_channels": [
+            32,
+            64,
+            128
+          ],
+          "kernel_sizes": [
+            15,
+            11,
+            7
+          ],
+          "pool_size": 4,
+          "dense_units": 64,
+          "dropout": 0.4
+        },
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "maximum_epochs": 50,
+        "patience": 8,
+        "optimizer": "AdamW",
+        "loss": "BCEWithLogitsLoss"
+      }
+    },
+    {
+      "pos_weight": 1.0,
+      "best_epoch": 15,
+      "best_validation_auprc": 0.23634145483382346,
+      "best_validation_auroc": 0.6101953601953601,
+      "best_validation_mcc_at_0_5": 0.0,
+      "best_validation_f1_at_0_5": 0.0,
+      "best_validation_precision_at_0_5": 0.0,
+      "best_validation_recall_at_0_5": 0.0,
+      "best_validation_balanced_accuracy_at_0_5": 0.5,
+      "best_validation_loss": 0.3501728141307831,
+      "train_auprc_at_best_epoch": 0.0975354050486153,
+      "epochs_completed": 23,
+      "early_stopping_triggered": true,
+      "training_seconds": 32.8803505897522,
+      "checkpoint": "experiments/pos_weight_ablation/pos_weight_1/best_checkpoint.pt",
+      "history": "experiments/pos_weight_ablation/pos_weight_1/training_history.csv",
+      "test_set_used": false,
+      "fixed_configuration": {
+        "seed": 123,
+        "architecture": {
+          "input_channels": 4,
+          "conv_channels": [
+            32,
+            64,
+            128
+          ],
+          "kernel_sizes": [
+            15,
+            11,
+            7
+          ],
+          "pool_size": 4,
+          "dense_units": 64,
+          "dropout": 0.4
+        },
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "maximum_epochs": 50,
+        "patience": 8,
+        "optimizer": "AdamW",
+        "loss": "BCEWithLogitsLoss"
+      }
+    }
+  ]
+}

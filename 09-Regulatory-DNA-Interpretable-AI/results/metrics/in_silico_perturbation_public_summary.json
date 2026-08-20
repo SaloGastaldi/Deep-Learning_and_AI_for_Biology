@@ -1,0 +1,58 @@
+{
+  "experiment_name": "proof_of_concept_in_silico_kmer_perturbation",
+  "scope": "Small final-project proof of concept; not a promoter-engineering workflow.",
+  "model_configuration": {
+    "kmer_size": 5,
+    "classifier": "LogisticRegression",
+    "C": 10.0,
+    "class_weight": "none",
+    "training_data": "train_plus_validation",
+    "perturbation_data": "frozen_test"
+  },
+  "perturbation_policy": {
+    "fixed_position_substitution": {
+      "promoters": "all 200 frozen Test promoters"
+    },
+    "natural_occurrence_disruption": "First natural occurrence was disrupted by a single-nucleotide substitution.",
+    "no_position_optimization": true,
+    "no_sequence_design_optimization": true,
+    "no_test_based_model_tuning": true
+  },
+  "aggregate_results": [
+    {
+      "experiment": "insert_supported_positive",
+      "n": 200,
+      "mean_delta_probability": 0.006548357711251051,
+      "fraction_probability_increased": 0.945,
+      "fraction_probability_decreased": 0.055
+    },
+    {
+      "experiment": "insert_negative_control",
+      "n": 200,
+      "mean_delta_probability": -0.004465208967759939,
+      "fraction_probability_increased": 0.115,
+      "fraction_probability_decreased": 0.885
+    },
+    {
+      "experiment": "insert_candidate_positive",
+      "n": 200,
+      "mean_delta_probability": 0.001579002862488954,
+      "fraction_probability_increased": 0.675,
+      "fraction_probability_decreased": 0.325
+    },
+    {
+      "experiment": "disrupt_supported_positive",
+      "n": 139,
+      "mean_delta_probability": -0.0054040856735279,
+      "fraction_probability_increased": 0.0,
+      "fraction_probability_decreased": 1.0
+    },
+    {
+      "experiment": "disrupt_candidate_positive",
+      "n": 160,
+      "mean_delta_probability": -0.003138101484853376,
+      "fraction_probability_increased": 0.0,
+      "fraction_probability_decreased": 1.0
+    }
+  ]
+}

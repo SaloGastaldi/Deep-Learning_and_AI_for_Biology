@@ -1,0 +1,26 @@
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb.bak
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Model checkpoints
+checkpoints/*
+!checkpoints/.gitkeep
+
+# Private / non-distributed biological data
+data/raw/*
+data/processed/*
+data/splits/*
+data/metadata/*
+
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/splits/.gitkeep
+!data/metadata/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db

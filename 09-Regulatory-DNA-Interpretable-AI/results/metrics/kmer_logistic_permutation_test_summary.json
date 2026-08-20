@@ -1,0 +1,76 @@
+{
+  "experiment_name": "fixed_kmer_logistic_regression_permutation_test",
+  "test_set_used": false,
+  "development_data": {
+    "sources": [
+      "data/splits/train.csv",
+      "data/splits/validation.csv"
+    ],
+    "samples": 1131,
+    "positive": 103,
+    "negative": 1028,
+    "positive_prevalence": 0.09106984969053934,
+    "similarity_groups": 1126
+  },
+  "evaluation_design": {
+    "outer_folds": 5,
+    "splitter": "StratifiedGroupKFold",
+    "fold_seed": 123,
+    "folds_frozen_before_permutations": true,
+    "statistic": "pooled_out_of_fold_auprc"
+  },
+  "fixed_model": {
+    "feature_type": "L2_normalized_character_kmer_frequencies",
+    "kmer_size": 5,
+    "classifier": "LogisticRegression",
+    "C": 10.0,
+    "class_weight": "none",
+    "solver": "liblinear",
+    "selection_status": "Fixed before permutation testing; no tuning performed in this script."
+  },
+  "permutation_design": {
+    "permutations": 200,
+    "permutation_seed": 1123,
+    "labels_shuffled": true,
+    "sequences_unchanged": true,
+    "groups_unchanged": true,
+    "folds_unchanged": true,
+    "empirical_p_value_formula": "(null_scores_greater_or_equal_observed + 1) / (n_permutations + 1)"
+  },
+  "observed": {
+    "auprc": 0.19730994669832588,
+    "auroc": 0.6562464583884251
+  },
+  "null_distribution": {
+    "auprc_mean": 0.09319392777860115,
+    "auprc_std": 0.011293297525536958,
+    "auprc_min": 0.06954725343110912,
+    "auprc_q025": 0.074718334297684,
+    "auprc_median": 0.09253122387369031,
+    "auprc_q975": 0.1166391218478708,
+    "auprc_max": 0.13571149414701386,
+    "auroc_mean": 0.4901782138944505,
+    "auroc_std": 0.040046973772759134
+  },
+  "significance": {
+    "auprc_null_exceedances": 0,
+    "auprc_empirical_p_value": 0.004975124378109453,
+    "auprc_observed_percentile": 100.0,
+    "auroc_null_exceedances": 0,
+    "auroc_empirical_p_value": 0.004975124378109453,
+    "auroc_observed_percentile": 100.0
+  },
+  "interpretation_policy": {
+    "primary_metric": "AUPRC",
+    "significance_threshold": 0.05,
+    "important_limitation": "This conditional test evaluates a fixed model configuration. It does not repeat nested hyperparameter selection for each permutation."
+  },
+  "runtime_seconds": 389.0801463127136,
+  "outputs": {
+    "distribution": "results/tables/kmer_logistic_permutation_distribution.csv",
+    "observed_predictions": "results/tables/kmer_logistic_fixed_model_oof_predictions.csv",
+    "fold_assignments": "results/tables/kmer_logistic_permutation_fold_assignments.csv",
+    "figure": "results/figures/kmer_logistic_permutation_test.png",
+    "summary": "results/metrics/kmer_logistic_permutation_test_summary.json"
+  }
+}

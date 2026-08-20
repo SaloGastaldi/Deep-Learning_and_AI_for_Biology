@@ -1,10 +1,10 @@
 # 🧬 AI for Drug Discovery & Biological Sequence Modeling
 
-This repository showcases deep learning and machine learning projects for **computational biology, biological sequence modeling, molecular property prediction, and AI-driven drug discovery**.
+This repository showcases deep learning and machine learning projects for **computational biology, biological sequence modeling, molecular property prediction, regulatory genomics, and AI-driven drug discovery**.
 
-The portfolio progresses from neural network foundations implemented from scratch to PyTorch architectures for genomic and protein sequence modeling, representation learning, Transformers, molecular machine learning, and pretrained chemical language models.
+The portfolio progresses from neural network foundations implemented from scratch to PyTorch architectures for genomic and protein sequence modeling, representation learning, Transformers, molecular machine learning, interpretable regulatory DNA modeling, and pretrained chemical language models.
 
-Across the projects, emphasis is placed not only on predictive performance, but also on **reproducibility, biological interpretation, data quality, class imbalance, representation robustness, and critical model validation**.
+Across the projects, emphasis is placed not only on predictive performance, but also on **reproducibility, biological interpretation, data quality, class imbalance, representation robustness, statistical validation, and critical model evaluation**.
 
 ---
 
@@ -12,12 +12,14 @@ Across the projects, emphasis is placed not only on predictive performance, but 
 
 - Deep Learning for Bioinformatics
 - Genomic Sequence Modeling
+- Regulatory DNA Modeling
 - Protein Sequence Modeling
 - Protein Representation Learning
 - Protein Language Modeling
 - Molecular Machine Learning
 - Molecular Property Prediction
 - Chemical Representation Learning
+- Interpretable AI
 - Transfer Learning
 - AI for Drug Discovery
 
@@ -43,6 +45,8 @@ Across the projects, emphasis is placed not only on predictive performance, but 
 ## Biological Sequence Modeling
 
 - DNA sequence classification
+- Regulatory DNA modeling
+- Promoter sequence modeling
 - Protein secondary structure prediction
 - Protein language modeling
 - Protein sequence autoencoders
@@ -59,6 +63,7 @@ Across the projects, emphasis is placed not only on predictive performance, but 
 - Learned trainable embeddings
 - Latent embeddings
 - Character-level sequence representations
+- k-mer frequency representations
 - Transformer tokenization
 
 ---
@@ -84,6 +89,13 @@ Across the projects, emphasis is placed not only on predictive performance, but 
 
 - Transcription factor binding prediction
 - ChIP-seq signal reconstruction
+- Regulatory DNA classification
+- Promoter sequence analysis
+- Sequence-similarity leakage auditing
+- Nested cross-validation
+- Permutation testing
+- Interpretable k-mer modeling
+- In silico sequence perturbation
 - Protein family representation learning
 - Protein sequence reconstruction
 - Sequence generation from latent spaces
@@ -147,6 +159,16 @@ A representation audit revealed that the strongest apparent raw-SMILES performan
 
 ---
 
+## 09 — Regulatory DNA Modeling & Interpretable AI
+
+Sequence-based regulatory modeling using **CNNs, interpretable k-mer representations, nested cross-validation, permutation testing, independent test evaluation, and in silico perturbation**.
+
+The CNN showed moderate validation performance but did not generalize to the independent test set, whereas a regularized 5-mer logistic regression model retained a predictive signal above the random AUPRC baseline on the independent test set.
+
+The project emphasizes **leakage-aware dataset design, statistical validation, model interpretability, and rigorous separation between model behavior and biological causality**. Public outputs were intentionally sanitized to preserve confidentiality while retaining the computational methodology and aggregate results.
+
+---
+
 # ⚙️ Technical Stack
 
 ## Languages & Frameworks
@@ -165,12 +187,14 @@ A representation audit revealed that the strongest apparent raw-SMILES performan
 - Biopython
 - RDKit
 - Logomaker
+- CD-HIT-EST
 
 ---
 
 ## Data Analysis & Visualization
 
 - Pandas
+- SciPy
 - Matplotlib
 
 ---
@@ -188,6 +212,8 @@ A representation audit revealed that the strongest apparent raw-SMILES performan
 # 🧠 Key Topics Explored
 
 - Deep learning for biological sequences
+- Regulatory DNA modeling
+- Promoter sequence analysis
 - Molecular machine learning
 - Molecular property prediction
 - Protein language modeling
@@ -197,14 +223,20 @@ A representation audit revealed that the strongest apparent raw-SMILES performan
 - Latent space analysis
 - Biological sequence embeddings
 - SMILES sequence modeling
+- k-mer sequence representations
 - Molecular representation robustness
 - Data-quality auditing
+- Sequence-similarity leakage control
 - Imbalanced classification
+- Nested cross-validation
+- Permutation testing
+- Independent test evaluation
 - Protein secondary structure prediction
 - Transformer attention analysis
 - Evolutionary conservation analysis
 - Sequence-to-sequence learning
 - Model interpretability
+- In silico sequence perturbation
 - Sequence generation
 - Genomic deep learning
 - Critical model validation
@@ -217,21 +249,23 @@ These projects reflect computational approaches relevant to:
 
 - AI-driven drug discovery
 - Computational biology
+- Regulatory genomics
 - Molecular property and toxicity prediction
 - Cheminformatics
 - Protein engineering
 - Genomics and regulatory modeling
 - Protein and chemical language models
 - Biological and molecular representation learning
+- Interpretable machine learning for biological sequences
 - Scientific machine learning for biotech and pharmaceutical R&D
 
-The portfolio demonstrates a workflow extending beyond model training to include **data preprocessing, representation design, model selection, imbalance-aware evaluation, biological interpretation, reproducibility, and validation of potentially misleading predictive signals**.
+The portfolio demonstrates workflows extending beyond model training to include **data preprocessing, representation design, leakage control, model selection, imbalance-aware evaluation, nested validation, permutation testing, biological interpretation, reproducibility, confidentiality-aware analysis, and validation of potentially misleading predictive signals**.
 
 ---
 
 # 🚀 Current Focus
 
-Building computational biology and AI workflows for **drug discovery, biological sequence modeling, molecular representation learning, and interpretable predictive modeling**, with particular interest in integrating domain knowledge with robust machine-learning validation.
+Building computational biology and AI workflows for **drug discovery, regulatory genomics, biological sequence modeling, molecular representation learning, and interpretable predictive modeling**, with particular interest in combining domain knowledge with rigorous machine-learning validation.
 
 ---
 

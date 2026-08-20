@@ -1,0 +1,77 @@
+{
+  "experiment_name": "final_frozen_test_evaluation_5mer_logistic_regression",
+  "test_set_used": true,
+  "test_usage_policy": "One-time final evaluation. No tuning or model selection performed.",
+  "model_frozen_before_test": true,
+  "model_configuration": {
+    "feature_type": "L2_normalized_character_5mer_frequencies",
+    "kmer_size": 5,
+    "possible_features": 1024,
+    "classifier": "LogisticRegression",
+    "C": 10.0,
+    "class_weight": "none",
+    "penalty": "l2",
+    "solver": "liblinear",
+    "random_seed": 123
+  },
+  "training_data": {
+    "sources": [
+      "data/splits/train.csv",
+      "data/splits/validation.csv"
+    ],
+    "samples": 1131,
+    "positive": 103,
+    "negative": 1028
+  },
+  "test_data": {
+    "source": "data/splits/test.csv",
+    "samples": 200,
+    "positive": 18,
+    "negative": 182,
+    "positive_prevalence": 0.09,
+    "random_auprc_baseline": 0.09
+  },
+  "evaluation_policy": {
+    "primary_metrics": [
+      "AUPRC",
+      "AUROC"
+    ],
+    "secondary_metrics": [
+      "MCC",
+      "F1",
+      "Precision",
+      "Recall",
+      "Balanced Accuracy",
+      "Accuracy"
+    ],
+    "classification_threshold": 0.5,
+    "threshold_optimized_on_test": false,
+    "hyperparameters_tuned_on_test": false,
+    "features_selected_on_test": false
+  },
+  "metrics": {
+    "auprc": 0.18390067327851978,
+    "auroc": 0.6123321123321124,
+    "mcc": 0.0,
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "balanced_accuracy": 0.5,
+    "accuracy": 0.91,
+    "threshold": 0.5,
+    "true_negative": 182,
+    "false_positive": 0,
+    "false_negative": 18,
+    "true_positive": 0,
+    "predicted_positive": 0
+  },
+  "runtime_seconds": 0.43949437141418457,
+  "outputs": {
+    "summary": "results/metrics/kmer_logistic_test_summary.json",
+    "metrics_table": "results/tables/kmer_logistic_test_metrics.csv",
+    "predictions": "results/tables/kmer_logistic_test_predictions.csv",
+    "precision_recall_curve": "results/figures/precision_recall_curve_kmer_test.png",
+    "roc_curve": "results/figures/roc_curve_kmer_test.png",
+    "confusion_matrix": "results/figures/confusion_matrix_kmer_test.png"
+  }
+}
