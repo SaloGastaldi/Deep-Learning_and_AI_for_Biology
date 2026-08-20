@@ -1,0 +1,5 @@
+Featurizer,Train samples,Input container shape,Example representation,Example shape
+ECFP,1184,"(1184, 1024)",ndarray,"(1024,)"
+GraphConv,1184,"(1184,)",ConvMol,variable / object
+Weave,1184,"(1184,)",WeaveMol,variable / object
+Raw,1184,"(1184,)",Mol,variable / object

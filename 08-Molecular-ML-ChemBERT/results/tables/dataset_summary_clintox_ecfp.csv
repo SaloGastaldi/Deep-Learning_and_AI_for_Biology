@@ -1,0 +1,4 @@
+Split,Samples,Feature dimensions,Prediction tasks
+Train,1184,1024,2
+Validation,148,1024,2
+Test,148,1024,2
